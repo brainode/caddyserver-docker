@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/caddyserver/{cfg,logs,www}
+
+# copy config
+[[ ! -f /caddyserver/cfg/Caddyfile ]] && cp \
+	/defaults/Caddyfile /caddyserver/cfg/Caddyfile
+
+
+# permissions
+chown -R abc:abc \
+	/caddyserver
